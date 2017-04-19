@@ -1,0 +1,3 @@
+mdespeuilles_soge_commerce_return:
+    path:     /soge-commerce/return
+    defaults: { _controller: MdespeuillesSogeCommerceBundle:Default:return }
