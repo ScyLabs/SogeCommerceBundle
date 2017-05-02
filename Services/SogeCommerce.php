@@ -18,9 +18,12 @@ class SogeCommerce implements ContainerAwareInterface {
     
     protected $properties;
     
+    protected $buttonLabel;
+    
     public function __construct()
     {
         $this->properties = [];
+        $this->buttonLabel = "Payment";
     }
     
     public function set($property, $value)
@@ -31,7 +34,8 @@ class SogeCommerce implements ContainerAwareInterface {
     public function getForm()
     {
         $form = $this->createForm(SogeType::class, null, [
-            'properties' => $this->properties
+            'properties' => $this->properties,
+            'buttonLabel' => $this->buttonLabel
         ]);
         
         $sign = $this->calculateSign($form);
@@ -78,5 +82,19 @@ class SogeCommerce implements ContainerAwareInterface {
         }
         
         return $test_certificate;
+    }
+    
+    /**
+     * @return string
+     */
+    public function getButtonLabel() {
+        return $this->buttonLabel;
+    }
+    
+    /**
+     * @param string $buttonLabel
+     */
+    public function setButtonLabel($buttonLabel) {
+        $this->buttonLabel = $buttonLabel;
     }
 }

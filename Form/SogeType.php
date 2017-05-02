@@ -64,6 +64,7 @@ class SogeType extends AbstractType implements ContainerAwareInterface
         $this->setDefaultProperties();
         $properties = $this->filterProperties($options['properties']);
         $properties = array_merge($this->defaultProperties, $properties);
+        $buttonLabel = $options['buttonLabel'];
         
         foreach ($properties as $name => $value) {
             $builder->add($name, HiddenType::class, [
@@ -73,7 +74,7 @@ class SogeType extends AbstractType implements ContainerAwareInterface
         
         $builder->add('signature', HiddenType::class);
         $builder->add('submit', SubmitType::class, [
-            'label' => 'Payment',
+            'label' => $buttonLabel,
             'attr' => [
                 'class' => 'btn-blue'
             ]
@@ -90,7 +91,8 @@ class SogeType extends AbstractType implements ContainerAwareInterface
             'amount' => null,
             'trans_id' => null,
             'customer_email' => null,
-            'properties' => []
+            'properties' => [],
+            'buttonLabel' => null
         ));
     }
     
