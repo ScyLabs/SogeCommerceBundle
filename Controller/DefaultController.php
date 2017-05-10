@@ -13,7 +13,7 @@ class DefaultController extends Controller
     {
         $datas = $request->query->all();
         
-        $this->get('event_dispatcher')->dispatch(ReturnEvent::NAME, new ReturnEvent($datas));
+        //$this->get('event_dispatcher')->dispatch(ReturnEvent::NAME, new ReturnEvent($datas));
         $route = $this->getParameter('mdespeuilles_soge_commerce.return_route');
 
         if ($datas['vads_trans_status'] == "REFUSED") {
@@ -24,8 +24,9 @@ class DefaultController extends Controller
     }
 
     public function ipnAction(Request $request) {
-        $datas = $request->query->all();
-        dump($datas);
+        $datas = $request->request->all();
+        $this->get('event_dispatcher')->dispatch(ReturnEvent::NAME, new ReturnEvent($datas));
+        //dump($datas);
         return new Response();
     }
 }
