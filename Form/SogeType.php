@@ -51,7 +51,8 @@ class SogeType extends AbstractType implements ContainerAwareInterface
             'vads_payment_config' => 'SINGLE',
             'vads_url_return' => $this->router->generate('mdespeuilles_soge_commerce_return', [], UrlGeneratorInterface::ABSOLUTE_URL),
             'vads_url_cancel' => $this->requestStack->getMasterRequest()->getUri(),
-            'vads_return_mode' => 'GET'
+            'vads_return_mode' => 'GET',
+            'vads_url_check' => $this->router->generate('mdespeuilles_soge_commerce_ipn', [], UrlGeneratorInterface::ABSOLUTE_URL),
         ];
     }
     
