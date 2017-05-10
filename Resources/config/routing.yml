@@ -1,3 +1,7 @@
-mdespeuilles_soge_commerce_return:
+mdespeuilles_soge_commerce_ipn:
     path:     /soge-commerce/return
     defaults: { _controller: MdespeuillesSogeCommerceBundle:Default:return }
+
+mdespeuilles_soge_commerce_return:
+    path:     /soge-commerce/ipn
+    defaults: { _controller: MdespeuillesSogeCommerceBundle:Default:ipn }

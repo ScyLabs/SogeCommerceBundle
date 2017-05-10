@@ -22,4 +22,10 @@ class DefaultController extends Controller
         
         return $this->redirectToRoute($route);
     }
+
+    public function ipnAction(Request $request) {
+        $datas = $request->query->all();
+        dump($datas);
+        return new Response();
+    }
 }
