@@ -26,7 +26,7 @@ class DefaultController extends Controller
     public function ipnAction(Request $request) {
         $datas = $request->request->all();
         $this->get('event_dispatcher')->dispatch(ReturnEvent::NAME, new ReturnEvent($datas));
-        //dump($datas);
+        dump($datas);
         return new Response();
     }
 }
