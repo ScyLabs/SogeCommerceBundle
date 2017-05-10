@@ -15,6 +15,10 @@ class DefaultController extends Controller
         
         $this->get('event_dispatcher')->dispatch(ReturnEvent::NAME, new ReturnEvent($datas));
         $route = $this->getParameter('mdespeuilles_soge_commerce.return_route');
+
+        if ($datas['vads_trans_status'] == "REFUSED") {
+            $route = $this->getParameter('mdespeuilles_soge_commerce.cancel_route');
+        }
         
         return $this->redirectToRoute($route);
     }

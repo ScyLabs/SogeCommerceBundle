@@ -27,6 +27,7 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('mode')->defaultValue(null)->end()
                 ->scalarNode('currency')->defaultValue(null)->end()
                 ->scalarNode('return_route')->defaultValue(null)->end()
+                ->scalarNode('cancel_route')->defaultValue(null)->end()
                 ->scalarNode('test_certificate')->defaultValue(null)->end()
                 ->scalarNode('prod_certificate')->defaultValue(null)->end()
                 /*->arrayNode('files_folder')
