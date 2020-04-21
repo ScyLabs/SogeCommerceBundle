@@ -1,13 +1,5 @@
 services:
-    mdespeuilles.soge_commerce:
-            class: Mdespeuilles\SogeCommerceBundle\Services\SogeCommerce
-            calls:
-                - [setContainer, ['@service_container']]
-
-    mdespeuilles.soge_commerce_form:
-            class: Mdespeuilles\SogeCommerceBundle\Form\SogeType
-            calls:
-                - [setContainer, ['@service_container']]
-            arguments: [ '@request_stack', '@router' ]
-            tags:
-                - { name: form.type, alias: fake_type }
+  
+    App\SogeCommerceBundle\:
+        resource: '../../*'
+        exclude: '../../{Entity,Migrations,Tests,Kernel.php,Event}'

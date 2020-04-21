@@ -6,10 +6,11 @@
  * Time: 16:46
  */
 
-namespace Mdespeuilles\SogeCommerceBundle\Services;
-use Mdespeuilles\SogeCommerceBundle\Form\SogeType;
+namespace App\SogeCommerceBundle\Services;
+use App\SogeCommerceBundle\Form\SogeType;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Form\Form;
 
 class SogeCommerce implements ContainerAwareInterface {
@@ -20,15 +21,17 @@ class SogeCommerce implements ContainerAwareInterface {
     
     protected $buttonLabel;
     
-    public function __construct()
+    public function __construct(ContainerInterface $container)
     {
+        $this->setContainer($container);
         $this->properties = [];
         $this->buttonLabel = "Payment";
     }
     
-    public function set($property, $value)
+    public function set(string $property, $value) : self
     {
         $this->properties[$property] = $value;
+        return $this;
     }
     
     public function getForm()
@@ -73,9 +76,9 @@ class SogeCommerce implements ContainerAwareInterface {
     }
     
     private function getCertificate() {
-        $test_certificate = $this->container->getParameter('mdespeuilles_soge_commerce.test_certificate');
-        $prod_certificate = $this->container->getParameter('mdespeuilles_soge_commerce.prod_certificate');
-        $mode = $this->container->getParameter('mdespeuilles_soge_commerce.mode');
+        $test_certificate = $this->container->getParameter('scylabs_soge_commerce.test_certificate');
+        $prod_certificate = $this->container->getParameter('scylabs_soge_commerce.prod_certificate');
+        $mode = $this->container->getParameter('scylabs_soge_commerce.mode');
     
         if ($mode === 'PRODUCTION') {
             return $prod_certificate;

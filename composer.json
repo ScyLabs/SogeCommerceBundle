@@ -1,10 +1,10 @@
 {
-  "name" : "mdespeuilles/sogecommercebundle",
+  "name" : "scylabs/sogecommercebundle",
   "description" : "SogeCommerce Bundle",
   "type" : "symfony-bundle",
   "authors" : [{
     "name" : "Maxence d'Espeuilles",
-    "email" : "mdespeuilles@openaccess.fr"
+    "email" : "scylabs@openaccess.fr"
   }],
   "keywords" : [
     "SogeCommerce payment bundle"
@@ -17,7 +17,7 @@
   },
   "autoload" : {
     "psr-4" : {
-      "Mdespeuilles\\SogeCommerceBundle\\" : ""
+      "App\\SogeCommerceBundle\\" : ""
     }
   },
   "extra" : {

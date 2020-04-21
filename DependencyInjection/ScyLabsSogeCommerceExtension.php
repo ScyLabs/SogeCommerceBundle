@@ -1,6 +1,6 @@
 <?php
 
-namespace Mdespeuilles\SogeCommerceBundle\DependencyInjection;
+namespace App\SogeCommerceBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -12,7 +12,7 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * @link http://symfony.com/doc/current/cookbook/bundles/extension.html
  */
-class MdespeuillesSogeCommerceExtension extends Extension
+class ScyLabsSogeCommerceExtension extends Extension
 {
     /**
      * {@inheritdoc}
@@ -26,7 +26,7 @@ class MdespeuillesSogeCommerceExtension extends Extension
         $loader->load('services.yml');
     
         foreach ($config as $key => $value) {
-            $container->setParameter('mdespeuilles_soge_commerce.'.$key, $value);
+            $container->setParameter('scylabs_soge_commerce.'.$key, $value);
         }
     }
 }

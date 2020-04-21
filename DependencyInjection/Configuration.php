@@ -1,6 +1,6 @@
 <?php
 
-namespace Mdespeuilles\SogeCommerceBundle\DependencyInjection;
+namespace App\SogeCommerceBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -18,26 +18,18 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('mdespeuilles_soge_commerce');
+        $rootNode = $treeBuilder->root('scylabs_soge_commerce');
     
         $rootNode
-            ->addDefaultsIfNotSet()
             ->children()
-                ->scalarNode('site_id')->defaultValue(null)->end()
-                ->scalarNode('mode')->defaultValue(null)->end()
-                ->scalarNode('currency')->defaultValue(null)->end()
-                ->scalarNode('return_route')->defaultValue(null)->end()
-                ->scalarNode('cancel_route')->defaultValue(null)->end()
-                ->scalarNode('test_certificate')->defaultValue(null)->end()
-                ->scalarNode('prod_certificate')->defaultValue(null)->end()
-                /*->arrayNode('files_folder')
-                    ->useAttributeAsKey('id')
-                    ->prototype('array')
-                    ->children()
-                        ->scalarNode('path')->defaultValue(null)->end()
-                    ->end()
-                ->end()
-            ->end()*/
+                ->scalarNode('site_id')->end()
+                ->scalarNode('mode')->end()
+                ->scalarNode('currency')->defaultValue(978)->end()
+                ->scalarNode('return_route')->end()
+                ->scalarNode('cancel_route')->end()
+                ->scalarNode('test_certificate')->end()
+                ->scalarNode('prod_certificate')->end()
+                
             ->end();
 
         // Here you should define the parameters that are allowed to

@@ -6,8 +6,8 @@
  * Time: 11:25
  */
 
-namespace Mdespeuilles\SogeCommerceBundle\Event;
-use Symfony\Component\EventDispatcher\Event;
+namespace App\SogeCommerceBundle\Event;
+use Symfony\Contracts\EventDispatcher\Event;
 
 class ReturnEvent extends Event
 {
@@ -18,15 +18,7 @@ class ReturnEvent extends Event
      */
     private $datas;
     
-    /**
-     * ReturnEvent constructor.
-     * @param $datas
-     */
-    public function __construct($datas)
-    {
-        $this->datas = (object)$datas;
-    }
-    
+
     /**
      * @return mixed
      */

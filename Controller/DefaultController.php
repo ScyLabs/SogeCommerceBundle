@@ -1,31 +1,40 @@
 <?php
 
-namespace Mdespeuilles\SogeCommerceBundle\Controller;
+namespace App\SogeCommerceBundle\Controller;
 
-use Mdespeuilles\SogeCommerceBundle\Event\ReturnEvent;
+use App\SogeCommerceBundle\Event\ReturnEvent;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
-class DefaultController extends Controller
+class DefaultController extends AbstractController
 {
     public function returnAction(Request $request)
     {
         $datas = $request->query->all();
         
         //$this->get('event_dispatcher')->dispatch(ReturnEvent::NAME, new ReturnEvent($datas));
-        $route = $this->getParameter('mdespeuilles_soge_commerce.return_route');
+        $route = $this->getParameter('scylabs_soge_commerce.return_route');
 
         if ($datas['vads_trans_status'] == "REFUSED") {
-            $route = $this->getParameter('mdespeuilles_soge_commerce.cancel_route');
+            $route = $this->getParameter('scylabs_soge_commerce.cancel_route');
         }
         
         return $this->redirectToRoute($route);
     }
 
-    public function ipnAction(Request $request) {
+    public function ipnAction(Request $request,EventDispatcherInterface $eventDispatcher) {
         $datas = $request->request->all();
-        $this->get('event_dispatcher')->dispatch(ReturnEvent::NAME, new ReturnEvent($datas));
+        
+        $event = new ReturnEvent();
+        
+        $event->setDatas($datas);
+
+        $eventDispatcher->dispatch($event);
+        
         return new Response();
     }
 }
