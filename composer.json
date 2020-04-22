@@ -2,6 +2,7 @@
   "name" : "scylabs/sogecommerce-bundle",
   "description" : "SogeCommerce Bundle",
   "type" : "symfony-bundle",
+  "version": "1.0.0",
   "authors" : [{
     "name" : "Maxence d'Espeuilles",
     "email" : "scylabs@openaccess.fr"
@@ -18,11 +19,6 @@
   "autoload" : {
     "psr-4" : {
       "ScyLabs\\SogeCommerceBundle\\" : ""
-    }
-  },
-  "extra" : {
-    "branch-alias" : {
-      "dev-master" : "1.0.0-dev"
     }
   }
 }
