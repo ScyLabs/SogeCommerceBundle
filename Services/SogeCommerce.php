@@ -72,7 +72,8 @@ class SogeCommerce implements ContainerAwareInterface {
         
         $string = implode("+", $values);
         
-        return sha1($string);
+        $signature = base64_encode(hash_hmac('sha256',$string, $this->getCertificate(), true));
+        return $signature;
     }
     
     private function getCertificate() {

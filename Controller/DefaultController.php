@@ -16,7 +16,6 @@ class DefaultController extends AbstractController
     {
         $datas = $request->query->all();
         
-        //$this->get('event_dispatcher')->dispatch(ReturnEvent::NAME, new ReturnEvent($datas));
         $route = $this->getParameter('scylabs_soge_commerce.return_route');
 
         if ($datas['vads_trans_status'] == "REFUSED") {
