@@ -1,7 +1,0 @@
-scylabs_soge_commerce_return:
-    path:     /soge-commerce/return
-    defaults: { _controller: ScyLabsSogeCommerceBundle:Default:return }
-
-scylabs_soge_commerce_ipn:
-    path:     /soge-commerce/ipn
-    defaults: { _controller: ScylabsSogeCommerceBundle:Default:ipn }

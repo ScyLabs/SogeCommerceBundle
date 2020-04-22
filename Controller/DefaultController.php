@@ -9,9 +9,13 @@ use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
 {
+    /**
+     * @Route("/soge-commerce/return",name="scylabs_soge_commerce_return")
+     */
     public function returnAction(Request $request)
     {
         $datas = $request->query->all();
@@ -25,6 +29,9 @@ class DefaultController extends AbstractController
         return $this->redirectToRoute($route);
     }
 
+    /**
+     * @Route("/soge-commerce/ipn",name="scylabs_soge_commerce_ipn")
+     */
     public function ipnAction(Request $request,EventDispatcherInterface $eventDispatcher) {
         $datas = $request->request->all();
         
