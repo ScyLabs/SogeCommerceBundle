@@ -1,6 +1,6 @@
 <?php
 
-namespace App\SogeCommerceBundle\Form;
+namespace ScyLabs\SogeCommerceBundle\Form;
 
 use Symfony\Bundle\FrameworkBundle\Routing\Router;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;

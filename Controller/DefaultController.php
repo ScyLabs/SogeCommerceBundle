@@ -1,8 +1,8 @@
 <?php
 
-namespace App\SogeCommerceBundle\Controller;
+namespace ScyLabs\SogeCommerceBundle\Controller;
 
-use App\SogeCommerceBundle\Event\ReturnEvent;
+use ScyLabs\SogeCommerceBundle\Event\ReturnEvent;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\EventDispatcher\EventDispatcher;

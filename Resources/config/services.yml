@@ -1,5 +1,5 @@
 services:
   
-    App\SogeCommerceBundle\:
+    ScyLabs\SogeCommerceBundle\:
         resource: '../../*'
         exclude: '../../{Entity,Migrations,Tests,Kernel.php,Event}'

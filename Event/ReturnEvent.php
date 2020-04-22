@@ -6,7 +6,7 @@
  * Time: 11:25
  */
 
-namespace App\SogeCommerceBundle\Event;
+namespace ScyLabs\SogeCommerceBundle\Event;
 use Symfony\Contracts\EventDispatcher\Event;
 
 class ReturnEvent extends Event

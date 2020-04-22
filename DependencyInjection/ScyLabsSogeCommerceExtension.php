@@ -1,6 +1,6 @@
 <?php
 
-namespace App\SogeCommerceBundle\DependencyInjection;
+namespace ScyLabs\SogeCommerceBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;

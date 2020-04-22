@@ -1,6 +1,6 @@
 <?php
 
-namespace App\SogeCommerceBundle;
+namespace ScyLabs\SogeCommerceBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

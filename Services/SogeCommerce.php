@@ -6,8 +6,8 @@
  * Time: 16:46
  */
 
-namespace App\SogeCommerceBundle\Services;
-use App\SogeCommerceBundle\Form\SogeType;
+namespace ScyLabs\SogeCommerceBundle\Services;
+use ScyLabs\SogeCommerceBundle\Form\SogeType;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 use Symfony\Component\DependencyInjection\ContainerInterface;
