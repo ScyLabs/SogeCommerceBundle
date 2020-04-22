@@ -103,28 +103,7 @@ class SogeType extends AbstractType implements ContainerAwareInterface
     private function filterProperties($properties)
     {
         foreach ($properties as $name => $value) {
-            if ('vads_trans_id' === $name) {
-                if (empty($value)) {
-                    throw new \Exception('vads_trans_id can not be null');
-                }
-                
-                if (!is_integer($value)) {
-                    throw new \Exception('vads_trans_id must be integer');
-                }
-    
-                if (strlen($value) > 6) {
-                    throw new \Exception('vads_trans_id must be <= 899999');
-                }
-    
-                if ($value < 0) {
-                    throw new \Exception('vads_trans_id must be >= 0');
-                }
-    
-                if (strlen($value) < 6) {
-                    $properties[$name] = str_pad($value, 6, "0", STR_PAD_LEFT);
-                }
-            }
-    
+           
             if ('vads_amount' === $name) {
                 if (!is_numeric($value)) {
                     throw new \Exception("vads_trans_id must be integer. The amount must be in centimes. (Ex: 10.50 euros will be 1050)");
