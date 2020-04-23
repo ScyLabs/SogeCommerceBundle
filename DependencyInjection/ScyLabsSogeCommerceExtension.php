@@ -26,7 +26,7 @@ class ScyLabsSogeCommerceExtension extends Extension
         $loader->load('services.yml');
     
         foreach ($config as $key => $value) {
-            $container->setParameter('scylabs_soge_commerce.'.$key, $value);
+            $container->setParameter('scy_labs_soge_commerce.'.$key, $value);
         }
     }
 }
