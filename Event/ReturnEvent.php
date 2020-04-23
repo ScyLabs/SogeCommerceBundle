@@ -7,6 +7,8 @@
  */
 
 namespace ScyLabs\SogeCommerceBundle\Event;
+
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Contracts\EventDispatcher\Event;
 
 class ReturnEvent extends Event
@@ -18,7 +20,9 @@ class ReturnEvent extends Event
      */
     private $datas;
     
-
+    public function __construct(Request $request){
+        $this->request  = $request;
+    }
     /**
      * @return mixed
      */
@@ -31,5 +35,12 @@ class ReturnEvent extends Event
      */
     public function setDatas($datas) {
         $this->datas = $datas;
+    }
+    public function setRequest(Request $request) : self {
+        $this->request = $request;
+        return $this;
+    }
+    public function getRequest() : Request{
+        return $this->request;
     }
 }

@@ -35,7 +35,7 @@ class DefaultController extends AbstractController
     public function ipnAction(Request $request,EventDispatcherInterface $eventDispatcher) {
         $datas = $request->request->all();
         
-        $event = new ReturnEvent();
+        $event = new ReturnEvent($request);
         
         $event->setDatas($datas);
 
