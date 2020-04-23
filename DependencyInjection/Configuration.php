@@ -18,7 +18,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('scylabs_soge_commerce');
+        $rootNode = $treeBuilder->root('scy_labs_soge_commerce');
     
         $rootNode
             ->children()

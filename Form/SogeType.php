@@ -42,20 +42,20 @@ class SogeType extends AbstractType implements ContainerAwareInterface
         $now = $now->format('YmdHis');
                  
         $this->defaultProperties = [
-            'vads_site_id' => $this->container->getParameter('scylabs_soge_commerce.site_id'),
-            'vads_ctx_mode' => $this->container->getParameter('scylabs_soge_commerce.mode'),
+            'vads_site_id' => $this->container->getParameter('scy_labs_soge_commerce.site_id'),
+            'vads_ctx_mode' => $this->container->getParameter('scy_labs_soge_commerce.mode'),
             'vads_trans_id' => null,
             'vads_trans_date' => $now,
             'vads_amount' => null,
-            'vads_currency' => $this->container->getParameter('scylabs_soge_commerce.currency'),
+            'vads_currency' => $this->container->getParameter('scy_labs_soge_commerce.currency'),
             'vads_action_mode' => 'INTERACTIVE',
             'vads_page_action' => 'PAYMENT',
             'vads_version' => 'V2',
             'vads_payment_config' => 'SINGLE',
-            'vads_url_return' => $this->router->generate('scylabs_soge_commerce_return', [], UrlGeneratorInterface::ABSOLUTE_URL),
+            'vads_url_return' => $this->router->generate('scy_labs_soge_commerce_return', [], UrlGeneratorInterface::ABSOLUTE_URL),
             'vads_url_cancel' => $this->requestStack->getMasterRequest()->getUri(),
             'vads_return_mode' => 'GET',
-            'vads_url_check' => $this->router->generate('scylabs_soge_commerce_ipn', [], UrlGeneratorInterface::ABSOLUTE_URL),
+            'vads_url_check' => $this->router->generate('scy_labs_soge_commerce_ipn', [], UrlGeneratorInterface::ABSOLUTE_URL),
         ];
     }
     

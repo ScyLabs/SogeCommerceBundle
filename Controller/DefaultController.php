@@ -14,23 +14,23 @@ use Symfony\Component\Routing\Annotation\Route;
 class DefaultController extends AbstractController
 {
     /**
-     * @Route("/soge-commerce/return",name="scylabs_soge_commerce_return")
+     * @Route("/soge-commerce/return",name="scy_labs_soge_commerce_return")
      */
     public function returnAction(Request $request)
     {
         $datas = $request->query->all();
         
-        $route = $this->getParameter('scylabs_soge_commerce.return_route');
+        $route = $this->getParameter('scy_labs_soge_commerce.return_route');
 
         if ($datas['vads_trans_status'] == "REFUSED") {
-            $route = $this->getParameter('scylabs_soge_commerce.cancel_route');
+            $route = $this->getParameter('scy_labs_soge_commerce.cancel_route');
         }
         
         return $this->redirectToRoute($route);
     }
 
     /**
-     * @Route("/soge-commerce/ipn",name="scylabs_soge_commerce_ipn")
+     * @Route("/soge-commerce/ipn",name="scy_labs_soge_commerce_ipn")
      */
     public function ipnAction(Request $request,EventDispatcherInterface $eventDispatcher) {
         $datas = $request->request->all();

@@ -77,9 +77,9 @@ class SogeCommerce implements ContainerAwareInterface {
     }
     
     private function getCertificate() {
-        $test_certificate = $this->container->getParameter('scylabs_soge_commerce.test_certificate');
-        $prod_certificate = $this->container->getParameter('scylabs_soge_commerce.prod_certificate');
-        $mode = $this->container->getParameter('scylabs_soge_commerce.mode');
+        $test_certificate = $this->container->getParameter('scy_labs_soge_commerce.test_certificate');
+        $prod_certificate = $this->container->getParameter('scy_labs_soge_commerce.prod_certificate');
+        $mode = $this->container->getParameter('scy_labs_soge_commerce.mode');
     
         if ($mode === 'PRODUCTION') {
             return $prod_certificate;
