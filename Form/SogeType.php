@@ -77,12 +77,7 @@ class SogeType extends AbstractType implements ContainerAwareInterface
         }
         
         $builder->add('signature', HiddenType::class);
-        $builder->add('submit', SubmitType::class, [
-            'label' => $buttonLabel,
-            'attr' => [
-                'class' => 'btn-blue'
-            ]
-        ]);
+     
     }
     
     /**
