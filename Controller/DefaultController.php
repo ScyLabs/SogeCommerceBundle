@@ -39,7 +39,7 @@ class DefaultController extends AbstractController
         
         $event->setDatas($datas);
 
-        $eventDispatcher->dispatch($event);
+        $eventDispatcher->dispatch($event,ReturnEvent::NAME);
         
         return new Response();
     }
