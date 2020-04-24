@@ -2,7 +2,7 @@
   "name" : "scylabs/sogecommerce-bundle",
   "description" : "SogeCommerce Bundle",
   "type" : "symfony-bundle",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "authors" : [{
     "name" : "Maxence d'Espeuilles",
     "email" : "scylabs@openaccess.fr"
